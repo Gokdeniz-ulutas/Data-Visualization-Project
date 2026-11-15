@@ -5,7 +5,7 @@ extracurriculars, physical activity) relates to **stress level** and **GPA** for
 It contains **12 visualizations**, **5 interactive filters plus per-chart controls**, and
 **2 machine-learning models** (K-Means clustering and Linear Regression).
 
-> **GitHub repository:** `<paste your public repo link here>`
+> **GitHub repository:** `https://github.com/Gokdeniz-ulutas/Data-Visualization-Project`
 
 ---
 
@@ -14,13 +14,13 @@ It contains **12 visualizations**, **5 interactive filters plus per-chart contro
 | Item | Detail |
 |---|---|
 | Source | [Student Lifestyle Dataset on Kaggle](https://www.kaggle.com/datasets/steve1215rogg/student-lifestyle-dataset) |
-| Size | **2,000 rows × 8 original columns** (14 after feature engineering) |
+| Size | 2,000 rows × 8 original columns (14 after feature engineering) |
 | Numerical | `Study_Hours_Per_Day`, `Extracurricular_Hours_Per_Day`, `Sleep_Hours_Per_Day`, `Social_Hours_Per_Day`, `Physical_Activity_Hours_Per_Day`, `GPA` |
 | Categorical | `Stress_Level` (Low / Moderate / High) + derived `Study_Band`, `Sleep_Band`, `GPA_Band` |
 | Identifier | `Student_ID` |
 | Files | `data/student_lifestyle_raw.csv` (original) · `data/student_lifestyle_clean.csv` (after preprocessing) |
 
-**Important property of the data:** for every student the five daily-hours columns add up to *exactly* 24 h, so
+Important property of the data: for every student the five daily-hours columns add up to *exactly* 24 h, so
 `Physical_Activity_Hours_Per_Day` is effectively "whatever time is left". This is why it correlates negatively with study time,
 and why it is excluded from the regression model (perfect collinearity).
 
@@ -36,8 +36,8 @@ and why it is excluded from the regression model (perfect collinearity).
 
 ## 3. Dashboard contents
 
-| # | Visualization | Type | Unique analytical perspective | ML? |
-|---|---|---|---|---|
+| # | Visualization | Type | Unique analytical perspective | ML |
+
 | 1 | Correlation matrix | Heatmap (Pearson / Spearman toggle) | Which variables move together? | |
 | 2 | GPA (or any metric) by stress level | **Violin + box plot** | Distribution shape per stress group | |
 | 3 | Study/Sleep/... vs GPA density | **Density heatmap + marginal histograms** | Where students concentrate | |
@@ -97,23 +97,17 @@ student_dashboard/
 
 ## 7. Team contributions
 
-Draft allocation. Replace the placeholders and record what each person actually did before submitting.
+| Member | Charts designed and implemented | Additional contributions |
+|---|---|---|
+| **Member 1 - `<Yunus-2022556046>`** | **1–3** — Correlation heatmap, violin with box plot, and 2D density heatmap | Checked missing values, duplicate IDs, GPA ranges and daily totals, and flagged outliers. Set up the correlation method, metric and axis selectors. |
+| **Member 2 - `<Selim-2022556065>`** | **4–6** — Treemap, parallel coordinates, and Sankey diagram | Prepared the study, sleep and GPA bands. Set up treemap drill-down, axis brushing and the Sankey stage selector. |
+| **Member 3 - `<Gökdeniz-2022556063>`** | **7–9** — 3D scatter, radar chart, and regression scatter with coefficient bars | Handled K-Means and linear regression. Added the cluster-count slider, 3D axis selectors, radar grouping and what-if GPA controls. |
+| **Member 4 - `<Serdar-2022556052>`** | **10–12** — GPA histogram, scatterplot matrix, and icicle plot | Adapted three charts from the course slides. Set up the histogram bin slider, stress-group legend controls and icicle drill-down. Wrote the one-page report. |
 
-| Member | Data preprocessing | Visualizations (design & code) | Interactivity | Other |
-|---|---|---|---|---|
-| **Member 1 - `<name>`** | Data quality checks, outlier detection (`preprocess.py`) | Viz 1 Correlation heatmap · Viz 2 Violin · Viz 3 Density heatmap · Viz 10 Histogram | Sidebar filters, correlation/metric/axis controls | README |
-| **Member 2 - `<name>`** | Feature engineering (bands, codes) | Viz 4 Treemap · Viz 5 Parallel coordinates · Viz 6 Sankey · Viz 12 Icicle plot | Treemap depth, Sankey stage selector | One-page report |
-| **Member 3 - `<name>`** | - | Viz 7 3-D scatter · Viz 8 Radar · Viz 9 Regression · Viz 11 Scatterplot matrix | k-slider, 3-D axis selectors, what-if predictor | ML models (`ml_models.py`), presentation |
+Each member presents their three charts and demonstrates one interaction.
 
 ## 8. Colour & design choices
 One colour per entity across all charts (Low = green, Moderate = blue, High = orange); blue sequential scale for magnitude;
 blue-grey-orange diverging scale for correlation. Every chart has a title, labelled axes/legends and a one-line "Insight" caption.
 
 
-## 9. English presentation
-
-1. Introduce the 2,000-student dataset. Explain the 24-hour constraint and show the outlier checkbox.
-2. Compare GPA by stress group. Demonstrate one slider, legend selection on the scatterplot matrix, and drill-down on the icicle plot.
-3. Show the K-Means silhouette score and explain the regression holdout. Describe one limitation and show the one-page report.
-
-Before submitting, publish the project on GitHub, fill in the actual contributions above, and add the public URL to the report's GitHub field.
