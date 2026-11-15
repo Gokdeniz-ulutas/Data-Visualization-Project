@@ -37,7 +37,7 @@ and why it is excluded from the regression model (perfect collinearity).
 ## 3. Dashboard contents
 
 | # | Visualization | Type | Unique analytical perspective | ML |
-
+|---|---|---|---|---|
 | 1 | Correlation matrix | Heatmap (Pearson / Spearman toggle) | Which variables move together? | |
 | 2 | GPA (or any metric) by stress level | **Violin + box plot** | Distribution shape per stress group | |
 | 3 | Study/Sleep/... vs GPA density | **Density heatmap + marginal histograms** | Where students concentrate | |
@@ -47,7 +47,6 @@ and why it is excluded from the regression model (perfect collinearity).
 | 7 | Students in 3-D coloured by cluster | **3-D scatter** | Natural groups of students | ✅ K-Means |
 | 8 | Group profiles | **Radar chart** | Index vs average student, per cluster / stress / study band | ✅ uses clusters |
 | 9 | Actual vs predicted GPA + coefficients | Scatter + bar (sub-plots) | What drives GPA, how well can we predict it? | ✅ Linear regression |
-
 | 10 | GPA distribution | Histogram | Frequency of GPA bands, with adjustable bins | |
 | 11 | Pairwise activity comparisons | Scatterplot matrix | Compare time-use pairs within and across stress groups | |
 | 12 | Stress → Sleep band → Study band | Icicle plot | Drill into the size of groups defined by stress and sleep | |
